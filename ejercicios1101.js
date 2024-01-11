@@ -1,5 +1,4 @@
 //Calculate the sum of all resistors connected in series.
-
 let circuito1 = [1.5,7,14]
 let total = circuito1.reduce((a, b) => a + b, 0)
 console.log(total);
@@ -8,20 +7,22 @@ console.log(total);
 function divideNumberIntoHalves(number) {
     return [number / 2, number / 2];
   }
+  
 
-//sociedad secreta
+  //sociedad secreta
 let miArray = ["Harry", "Ron", "Hermione", "LE SSERAFIM"];
 miArray.sort(); //primero las ordeno alfabéticamente
 let secretName = miArray.map(word => word.charAt(0)).join(""); //creo un nuevo array con las iniciales de cada palabra y las uno con join pero no coloco nada para que así se unan en una sola palabra.
 console.log(secretName);
 
 
-//oline status
-//Display online status for a list of users.
- const onlineStatus = ["OzoneMotion", "P33k4B00", "ElbaLazo99"]
+//Online Status
+ const onlineStatus = ["OzoneMotion", "P33k4B00", "ElbaLazo99", "Terreneitor"]
+ /*onlineStatus.pop()
 nuevaFrase= onlineStatus.join(", ");
-console.log(`${nuevaFrase} are online`)
-// should return `'mockIng99, J0eyPunch and 1 more online'`.
+console.log(`${nuevaFrase} and ${onlineStatus.length-1} more online`)*/
+console.log(`${onlineStatus[0]}, ${onlineStatus[1]} and ${onlineStatus.length-2} more online`)
+
 
 //Array of Multiples
 function multiplos(num, long) {
@@ -32,6 +33,44 @@ function multiplos(num, long) {
         miArray.push(res);
     }
     console.log(miArray)
-    
 }
 
+
+//Positive dominance in Array
+let posArray = [5, 6, 7, -2, -10]
+
+function counter(Array){
+    let contador=0
+    posArray.forEach((element) => {
+        if (element>0) {
+            contador++;
+        }   
+    })
+    let media = Array.length/2
+    return contador>media;
+};
+let resultado = counter(posArray)
+console.log(resultado)
+
+//Antipodal Average
+ /*
+Given an array, return a shorter array following these steps:
+- Split the array into two equal parts*. If unequal, remove the middle element to obtain two equal arrays.
+- Sum each number of the first part with the inverse numbers of the second part.
+- Divide each number of the resulting array by 2.
+
+Example:
+- For the array `[1,2,3,5,22,6]`, the result should be `[3.5, 12, 4]`.*/
+
+const miiArray = [1, 2, 3, 4, 5, 6, 7];
+function antipodalAverage(array) {
+    const halfLength =array.length / 2; //obtener la mitad
+    if (halfLength%2!=0) {
+        indexEliminacion=Math.floor(halfLength) //me redondeé hacia abajo el número en caso de ser fraccionario
+        array.splice(indexEliminacion, 1) //me elimine el número de en medio
+    }
+    const firstHalf = array.slice(0, halfLength);
+    const secondHalf = array.slice(halfLength);
+    return console.log(`La primera mitad del array es: ${firstHalf}`), console.log(`La segunda mitad del array es: ${secondHalf}`);
+}
+let resArray = antipodalAverage(miiArray)
