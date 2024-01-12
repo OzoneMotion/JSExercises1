@@ -64,10 +64,9 @@ function antipodalAverage(array) {
     }
     let firstHalf = array.slice(0, halfLength);
     let secondHalf = array.slice(halfLength);
-    const newArray = firstHalf.map((value, index) => value + 1/secondHalf[index]);
-    newArray.forEach((element) => {
-        element/2
-    })
-    return console.log(`[${newArray}]`);
+    let newArray = firstHalf.map((value, index) => value + 1/secondHalf[index]);
+    let divArray = newArray.map((value) => value / 2);
+
+    return console.log(`[${divArray}]`);
 }
 let resArray = antipodalAverage(miiArray)
