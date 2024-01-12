@@ -53,7 +53,7 @@ let resultado = counter(posArray)
 console.log(resultado)
 
 //Antipodal Average
-const miiArray = [1, 2, 3, 4, 5, 6];
+const miiArray = [1, 2, 3, 4, 5, 6, 7];
 function antipodalAverage(array) {
     let halfLength =array.length / 2; //obtener la mitad
     if (array.length%2!=0) {
@@ -64,6 +64,10 @@ function antipodalAverage(array) {
     }
     let firstHalf = array.slice(0, halfLength);
     let secondHalf = array.slice(halfLength);
-    return console.log(`La primera mitad del array es: ${firstHalf}`), console.log(`La segunda mitad del array es: ${secondHalf}`);
+    const newArray = firstHalf.map((value, index) => value + 1/secondHalf[index]);
+    newArray.forEach((element) => {
+        element/2
+    })
+    return console.log(`[${newArray}]`);
 }
 let resArray = antipodalAverage(miiArray)
