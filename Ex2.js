@@ -3,34 +3,35 @@ Write a program that prompts a user for their data: username, age, and a list of
 Store the information and then showcase it in the console. 
 Take note that the output for the films should add a small message like: 
 'The film {film} is one of my favorites'.
-*/
-let userName = window.prompt("Dime tu nommbre", )
-let userAge = window.prompt("¿Cuántos años tienes?", )
-let userMovies = window.prompt("Dime tus películas favoritas", )
-let personalInfo ={
-    nombre: userName,
-    edad: userAge,
-    peliculasFavoritas : [userMovies]
+*/ 
+let userName = window.prompt("Dime tu nombre")
+let userAge = window.prompt("¿Cuántos años tienes?")
+let userMovies = window.prompt("Dime tus películas favoritas")
+let moviesArray = [];
+
+for (i = 0; i <2; i++) {
+  let valor = prompt("Ingresa tu película favorita")
+  miArray.push(valor);
 }
-//function mostrarInformacion(){
-    console.log(`Hola soy ${personalInfo.nombre}, tengo ${personalInfo.edad} 
-    años y una de mis películas favoritas es "${personal.peliculasFavoritas[0]}".`)
-//        }
+console.log(`Hola eres ${userName}, tienes ${userAge} años y una de mis películas favoritas es"${moviesArray[1]}".`)
+
+
 
 /*Highest number
 Write a program that asks for 10 numbers. 
 Using logical operators and any other javascript functions/structures you've seen before, 
 determine and output the highest of those numbers.
 */
-let miArray = [1, 2, 3, 4, 5];
-let mayor = miArray[0];
 
-for (i = 1; i < miArray.length; i++) {
-  if (miArray[i] > mayor) {
-    mayor = miArray[i];
+let miArray = [];
+for (i = 0; i <10; i++) {
+    let valor = prompt(`Ingresa el valor número ${i+1}`)
+    miArray.push(valor);
   }
-}
-console.log("El número mayor del array es " + mayor);
+  miArray.sort(function(a, b) {
+    return b - a;
+  });
+console.log(`El número mayor es el ${miArray[0]}`);
 
 /*Alarm
 Write a program that asks a user for the amount of seconds needed until an alarm 
